@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Luvish Ramchandani · Software Engineer, Full Stack &amp; ML</title>
+  <link rel="canonical" href="https://luvish6.github.io/">
+  <meta name="author" content="Luvish Ramchandani">
+  <meta name="robots" content="index, follow">
+  <meta property="og:url" content="https://luvish6.github.io/">
+  <meta property="og:site_name" content="Luvish Ramchandani">
+  <meta property="og:title" content="Luvish Ramchandani · Software Engineer, Full Stack &amp; ML">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Luvish Ramchandani",
+    "url": "https://luvish6.github.io/",
+    "jobTitle": "Computer Science Student · Software Engineer",
+    "description": "Computer Science student at SRM Institute of Science and Technology building full-stack products, backend systems and ML pipelines.",
+    "email": "mailto:luvishramchandani@gmail.com",
+    "birthPlace": { "@type": "Country", "name": "Zimbabwe" },
+    "homeLocation": { "@type": "Place", "name": "Lucknow, Uttar Pradesh, India" },
+    "alumniOf": [
+      { "@type": "CollegeOrUniversity", "name": "SRM Institute of Science and Technology" },
+      { "@type": "School", "name": "City Montessori School, Lucknow" }
+    ],
+    "knowsAbout": ["Software Engineering", "Full-Stack Development", "Machine Learning", "Distributed Systems", "Data Science", "Chess"],
+    "sameAs": [
+      "https://github.com/Luvish6",
+      "https://www.linkedin.com/in/luvish-ramchandani-6312a2162",
+      "https://leetcode.com/u/Luvish6/",
+      "https://www.instagram.com/luvish_ramchandani/"
+    ]
+  }
+  </script>
+  <meta property="og:description" content="CS student at SRM building full-stack products, backend systems and ML pipelines. Born in Zimbabwe, studying in India.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <meta name="theme-color" content="#111214">
+  <meta name="description" content="Luvish Ramchandani — Computer Science student at SRM building full-stack products, backend systems and ML pipelines. Born in Zimbabwe, studying in India.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>♞</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script>
+    try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a href="#top" class="logo" aria-label="Home"><span class="knight">♞</span> Luvish</a>
+      <nav class="nav-links" aria-label="Main">
+        <a href="#now">Now</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#journey">Journey</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#beyond">Beyond code</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="theme-btn kbtn" id="jumpBtn" aria-label="Open quick jump menu" title="Quick jump (Ctrl/⌘ + K)">⌘K</button>
+      <button class="theme-btn" id="themeBtn" aria-label="Toggle light and dark mode">◐</button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="board-bg" aria-hidden="true"></div>
+      <div class="wrap hero-inner">
+        <div class="hero-text">
+        <p class="eyebrow mono">1. e4 e5 &nbsp;2. Nf3 &nbsp;— hello, world</p>
+        <h1>Hi, I'm Luvish.<br><span class="muted-h">I build products, backends &amp; ML systems.</span></h1>
+        <p class="lead">
+          Computer Science student at <strong>SRM Institute of Science and Technology</strong> (GPA 9.43).
+          Born and raised in <strong>Zimbabwe</strong>, where I played chess at the national level as a
+          schoolboy, and now studying in <strong>India</strong>. I still like to think a few moves ahead.
+        </p>
+        <div class="cta-row">
+          <a class="btn primary" href="#projects">See my projects</a>
+          <a class="btn" data-link="github" href="#" target="_blank" rel="noopener">GitHub ↗</a>
+          <a class="btn" data-link="leetcode" href="#" target="_blank" rel="noopener">LeetCode ↗</a>
+          <div class="dropdown">
+            <button class="btn" id="resumeBtn" aria-expanded="false" aria-controls="resumeMenu">Resume ▾</button>
+            <div class="menu" id="resumeMenu" hidden>
+              <a href="resumes/luvish-swe.pdf" target="_blank" rel="noopener">Software Engineering</a>
+              <a href="resumes/luvish-fullstack.pdf" target="_blank" rel="noopener">Full Stack</a>
+              <a href="resumes/luvish-data-science.pdf" target="_blank" rel="noopener">Data Science</a>
+            </div>
+          </div>
+        </div>
+        <ul class="facts">
+          <li><span class="mono">♟</span> Played national-level chess in Zimbabwe (school years)</li>
+          <li><span class="mono">🏎</span> F1 in Schools India: 7th &amp; 8th nationally</li>
+          <li><span class="mono">🎓</span> B.Tech CSE, graduating 2027</li>
+        </ul>
+        </div>
+        <div class="hero-board" id="heroBoard">
+          <div class="board-fallback" aria-hidden="true"><span>♞</span></div>
+          <p class="board-hint mono" id="boardHint">Tap the board to move the knight</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <div class="stats-band">
+      <div class="wrap stats" id="stats"></div>
+    </div>
+
+    <!-- NOW -->
+    <section id="now" class="section now">
+      <div class="wrap">
+        <p class="sq mono">d4 · Now</p>
+        <h2>What I'm doing now</h2>
+        <div class="now-grid">
+          <article class="card now-main">
+            <span class="badge progress">Major project · in progress</span>
+            <h3>Mining Disturbance &amp; River Degradation Monitoring</h3>
+            <p>
+              My final-year major project: multi-sensor satellite monitoring of mining-related land disturbance and
+              downstream river degradation in the East and West Jaintia Hills of Meghalaya (about 3,800 km²).
+              It combines Sentinel-1 radar and Sentinel-2 optical imagery in Google Earth Engine, with seasonal change
+              features, a Random Forest evaluation pipeline, a Streamlit dashboard and a React review portal.
+            </p>
+            <div class="tags"><span>Python</span><span>Google Earth Engine</span><span>Sentinel-1/2</span><span>Random Forest</span><span>Streamlit</span><span>React</span></div>
+            <a class="text-link" href="https://github.com/Luvish6/mining-disturbance-monitoring" target="_blank" rel="noopener">View on GitHub ↗</a>
+          </article>
+          <ul class="now-list">
+            <li><span class="label">Building</span>The new projects on this site: a real-time collaborative workspace and a Redis-compatible key-value store</li>
+            <li><span class="label">Practising</span>Data structures &amp; algorithms on <a data-link="leetcode" href="#" target="_blank" rel="noopener">LeetCode</a></li>
+            <li><span class="label">Looking for</span>Software engineering, full-stack and ML internships and graduate roles</li>
+            <li><span class="label">Watching</span>Re-runs of The Big Bang Theory, Suits and The Mentalist</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="wrap">
+        <p class="sq mono">e6 · About</p>
+        <h2>Two countries, one curious engineer</h2>
+        <div class="about-grid">
+          <div class="prose">
+            <p>
+              I was born in Zimbabwe and went to school there until Class 9, then moved to Lucknow, India
+              to finish my Cambridge A-Levels. Growing up across two very different places taught me to adapt
+              quickly, work with people from all kinds of backgrounds, and look at problems from more than
+              one angle.
+            </p>
+            <p>
+              Today I'm studying Computer Science at SRM in Chennai. I enjoy building things end-to-end: a
+              React front-end, a high-throughput Go and Redis backend, a machine-learning pipeline on satellite data.
+              I care about systems that are fast, correct, and actually useful to the people using them.
+            </p>
+            <p>
+              I'm currently looking for <strong>software engineering, full-stack and ML internships and
+              graduate roles</strong>.
+            </p>
+            <h3 class="facts-title">A few things about me</h3>
+            <ul class="me-list">
+              <li><span>🇿🇼</span> Born in Zimbabwe and schooled there until Class 9; I've called both Zimbabwe and India home.</li>
+              <li><span>♟</span> Favourite opening: the <strong>London System</strong>. Solid, flexible, and hard to crack.</li>
+              <li><span>📺</span> Favourite sitcom: <strong>The Big Bang Theory</strong>. Also hooked on <strong>Suits</strong> and <strong>The Mentalist</strong>.</li>
+              <li><span>🏁</span> Formula 1 fan and two-time F1 in Schools national finalist.</li>
+              <li><span>🏏</span> Happiest on a cricket pitch when I'm not at a keyboard.</li>
+            </ul>
+          </div>
+          <aside class="card stack">
+            <h3>What I work with</h3>
+            <div class="skill-group"><span class="label">Languages</span><p>Python · Java · Go · C++ · C · TypeScript · SQL</p></div>
+            <div class="skill-group"><span class="label">Web &amp; backend</span><p>React · FastAPI · Flask · Spring Boot · REST APIs</p></div>
+            <div class="skill-group"><span class="label">Data &amp; ML</span><p>PyTorch · TensorFlow · Scikit-learn · XGBoost · PySpark · LangChain · FAISS</p></div>
+            <div class="skill-group"><span class="label">Infra &amp; data stores</span><p>Docker · Kafka · Redis · PostgreSQL · MySQL · Git · CI/CD</p></div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section alt">
+      <div class="wrap">
+        <p class="sq mono">c7 · Projects</p>
+        <h2>Things I've built, and what I'm building next</h2>
+        <p class="sub">Everything lives on my <a data-link="github" href="#" target="_blank" rel="noopener">GitHub</a>. Projects marked <span class="badge progress">In progress</span> are being built right now.</p>
+        <div class="filters" role="group" aria-label="Filter projects">
+          <button class="chip active" data-filter="all">All</button>
+          <button class="chip" data-filter="fullstack">Full stack</button>
+          <button class="chip" data-filter="systems">Backend &amp; systems</button>
+          <button class="chip" data-filter="ai">AI / ML</button>
+          <button class="chip" data-filter="data">Data</button>
+        </div>
+        <div class="grid" id="projectGrid"></div>
+      </div>
+    </section>
+
+    <!-- DREAM PROJECTS -->
+    <section id="dream" class="section">
+      <div class="wrap">
+        <p class="sq mono">a8 · Dream projects</p>
+        <h2>Ideas on my board</h2>
+        <p class="sub">Projects I'd love to build next. Not started yet, but thought through.</p>
+        <article class="card dream">
+          <div class="dream-art" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+          <div>
+            <span class="badge idea">Idea</span>
+            <h3>Vibescape</h3>
+            <p>
+              A music companion that connects to Spotify, works out your current mood, and picks what plays next to
+              match or lift it. It would learn from what you skip and replay, so the queue keeps up as your
+              vibe changes through the day.
+            </p>
+            <div class="tags"><span>Spotify Web API</span><span>Mood detection</span><span>Recommendations</span><span>Full stack</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- JOURNEY -->
+    <section id="journey" class="section">
+      <div class="wrap">
+        <p class="sq mono">b6 · Journey</p>
+        <h2>The path so far</h2>
+        <ol class="timeline">
+          <li>
+            <span class="where mono">Zimbabwe</span>
+            <h3>Born, raised &amp; schooled through Class 9</h3>
+            <p>Grew up in Zimbabwe and, as a school student, played competitive chess there up to the Zimbabwean national level.</p>
+          </li>
+          <li>
+            <span class="where mono">Lucknow, India · 2022</span>
+            <h3>City Montessori School, Cambridge Section</h3>
+            <p>Cambridge A-Levels (90%) in Computer Science, Mathematics, Statistics, Physics and Chemistry. Competed in F1 in Schools India with my team.</p>
+          </li>
+          <li>
+            <span class="where mono">Chennai · 2023 – 2027</span>
+            <h3>B.Tech Computer Science, SRM IST</h3>
+            <p>GPA 9.43 / 10. Coursework in data structures &amp; algorithms, OOP, machine learning, AI and statistics.</p>
+          </li>
+          <li>
+            <span class="where mono">Lucknow · Jun – Jul 2025</span>
+            <h3>Intern, SparkLiv Foundation</h3>
+            <p>Researched virtual commerce and 3D environments, built 3D product models and proposed digital showroom concepts for immersive e-commerce.</p>
+          </li>
+          <li class="next">
+            <span class="where mono">Next move</span>
+            <h3>Your team?</h3>
+            <p>Looking for internships and graduate roles in software engineering, full-stack and ML. <a href="#contact">Let's talk →</a></p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section id="certifications" class="section alt">
+      <div class="wrap">
+        <p class="sq mono">d5 · Certifications</p>
+        <h2>Certifications</h2>
+        <p class="sub">Courses and credentials I've completed alongside my degree.</p>
+        <div class="cert-grid" id="certGrid"></div>
+      </div>
+    </section>
+
+    <!-- BEYOND CODE -->
+    <section id="beyond" class="section">
+      <div class="wrap">
+        <p class="sq mono">f6 · Beyond code</p>
+        <h2>When I'm not coding</h2>
+        <div class="beyond-grid">
+          <article class="card hobby feature">
+            <div class="feature-text">
+              <div class="hobby-icon" aria-hidden="true">♚</div>
+              <h3>Chess</h3>
+              <p>
+                While growing up in Zimbabwe, I played competitive chess as a school student, up to the
+                <strong>Zimbabwean national level</strong>, before moving to India. Chess taught me
+                patience, pattern recognition and calculating consequences before committing, which is
+                how I like to approach system design too. My go-to opening is the London System.
+              </p>
+              <div class="puzzle-panel">
+                <p class="puzzle-title">Your turn: <strong>White to move, mate in one.</strong></p>
+                <p class="puzzle-status" id="puzzleStatus" aria-live="polite">Tap a white piece, then tap where it should go.</p>
+                <div class="puzzle-actions">
+                  <button class="chip" id="puzzleHint">Hint</button>
+                  <button class="chip" id="puzzleReset">Reset</button>
+                </div>
+              </div>
+            </div>
+            <div class="puzzle" id="puzzle" role="grid" aria-label="Chess puzzle board"></div>
+          </article>
+          <article class="card hobby">
+            <div class="hobby-icon" aria-hidden="true">🏎</div>
+            <h3>F1 in Schools</h3>
+            <p>
+              My team, <strong>Team Adrenaline</strong>, finished <strong>7th and 8th</strong> at the F1 in Schools India National Finals
+              (Time of Sports) across two seasons, winning the <strong>Best Sponsorship &amp; Marketing Award</strong>
+              and earning nominations for Best Engineered Car and Best Enterprise Portfolio.
+            </p>
+            <a class="text-link" data-link="team" href="#" target="_blank" rel="noopener">Follow Team Adrenaline on Instagram ↗</a>
+          </article>
+          <article class="card hobby">
+            <div class="hobby-icon" aria-hidden="true">🏁</div>
+            <h3>Formula 1</h3>
+            <p>
+              A big Formula 1 fan, which fits nicely with my F1 in Schools years. The engineering, race strategy
+              and data behind every hundredth of a second are what make it fun to follow.
+            </p>
+          </article>
+          <article class="card hobby">
+            <div class="hobby-icon" aria-hidden="true">🏏</div>
+            <h3>Cricket</h3>
+            <p>
+              I love playing cricket. It's a great way to get outside, compete and be part of a team.
+            </p>
+          </article>
+          <article class="card hobby">
+            <div class="hobby-icon" aria-hidden="true">📺</div>
+            <h3>Sitcoms &amp; shows</h3>
+            <p>
+              My way to switch off. The Big Bang Theory is my all-time favourite, and I love Suits and The Mentalist. Always happy to trade recommendations.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section alt contact">
+      <div class="wrap">
+        <p class="sq mono">g8 · Contact</p>
+        <h2>Your move.</h2>
+        <p class="lead">Hiring, collaborating, or up for a game of chess? I'd love to hear from you.</p>
+        <ul class="contact-list mono">
+          <li><span class="label">Email</span> <a data-link="email" href="#"><span data-text="email"></span></a> <button class="copy-btn" id="copyEmail" type="button">Copy</button></li>
+          <li><span class="label">Based in</span> Lucknow, India (home) · studying in Chennai</li>
+          <li><span class="label">Phone</span> <a data-link="phone" href="#"><span data-text="phone"></span></a></li>
+        </ul>
+        <div class="cta-row">
+          <a class="btn primary" data-link="email" href="#">Email me</a>
+          <a class="btn" data-link="phone" href="#">Call me</a>
+          <a class="btn" data-link="linkedin" href="#" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <a class="btn" data-link="github" href="#" target="_blank" rel="noopener">GitHub ↗</a>
+          <a class="btn" data-link="leetcode" href="#" target="_blank" rel="noopener">LeetCode ↗</a>
+          <a class="btn" data-link="instagram" href="#" target="_blank" rel="noopener">Instagram ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">© <span id="year"></span> Luvish Ramchandani · Built from scratch with HTML, CSS &amp; JavaScript</div>
+  </footer>
+
+  <dialog class="modal" id="storyModal" aria-labelledby="storyTitle">
+    <button class="modal-x" data-close aria-label="Close">✕</button>
+    <div id="storyBody"></div>
+  </dialog>
+
+  <dialog class="modal jump" id="jumpModal" aria-label="Quick jump">
+    <input id="jumpInput" type="text" placeholder="Jump to a section or project…" autocomplete="off" aria-label="Search sections and projects">
+    <ul id="jumpList" role="listbox"></ul>
+    <p class="jump-foot mono">↑↓ to move · Enter to go · Esc to close</p>
+  </dialog>
+
+  <aside class="tracker" id="tracker" aria-hidden="true">
+    <div class="tracker-board" id="trackerBoard"><span class="tracker-knight" id="trackerKnight">♞</span></div>
+    <span class="tracker-label mono" id="trackerLabel">Nf3</span>
+  </aside>
+
+  <script type="importmap">
+    { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js" } }
+  </script>
+  <script src="script.js"></script>
+  <script src="chess.js"></script>
+  <script src="motion.js"></script>
+  <script type="module" src="hero3d.js"></script>
+</body>
+</html>
