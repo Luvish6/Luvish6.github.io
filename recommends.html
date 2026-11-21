@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Luvish Recommends · Shows worth watching</title>
+  <meta name="description" content="Shows Luvish Ramchandani keeps coming back to: The Big Bang Theory, Suits, The Mentalist and more.">
+  <link rel="canonical" href="https://luvish6.github.io/recommends.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>♞</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script>try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {}</script>
+  <style>
+    .rec-grid { display: grid; gap: 20px; margin-top: 28px; }
+    @media (min-width: 760px) { .rec-grid { grid-template-columns: repeat(3, 1fr); } }
+    .rec { display: flex; flex-direction: column; gap: 10px; }
+    .rec .poster { height: 150px; border-radius: 10px; display: grid; place-items: center; font-size: 54px; margin-bottom: 4px; }
+    .rec h2 { font-size: 22px; margin: 0; }
+    .rec p { margin: 0; color: var(--muted); font-size: 15px; }
+    .rec .meta { font: 12px var(--mono); color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+    .p1 { background: linear-gradient(135deg, #f6d365, #fda085); }
+    .p2 { background: linear-gradient(135deg, #2c3e50, #4ca1af); }
+    .p3 { background: linear-gradient(135deg, #8e2de2, #4a00e0); }
+    .soon { margin-top: 32px; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a href="./" class="logo" aria-label="Back to home"><span class="knight">♞</span> Luvish</a>
+      <a class="btn" href="./#beyond" style="margin-left:auto">← Back to the site</a>
+    </div>
+  </header>
+  <main class="section">
+    <div class="wrap">
+      <p class="sq mono">Off the board</p>
+      <h1 style="max-width:none">Luvish recommends</h1>
+      <p class="lead">Shows I keep coming back to. If you're looking for something to watch tonight, start here.</p>
+
+      <div class="rec-grid">
+        <article class="card rec">
+          <div class="poster p1" aria-hidden="true">⚛️</div>
+          <span class="badge built" style="align-self:flex-start">All-time favourite</span>
+          <h2>The Big Bang Theory</h2>
+          <span class="meta">Sitcom · 12 seasons</span>
+          <p>Four brilliant, socially awkward scientists and the friends who put up with them. Endlessly rewatchable, and Sheldon never gets old.</p>
+        </article>
+        <article class="card rec">
+          <div class="poster p2" aria-hidden="true">💼</div>
+          <h2>Suits</h2>
+          <span class="meta">Legal drama · 9 seasons</span>
+          <p>A college dropout with a photographic memory talks his way into a top law firm. Sharp dialogue, big wins, and a lot of strategy. A bit like chess with briefcases.</p>
+        </article>
+        <article class="card rec">
+          <div class="poster p3" aria-hidden="true">🔍</div>
+          <h2>The Mentalist</h2>
+          <span class="meta">Crime drama · 7 seasons</span>
+          <p>A former fake psychic uses observation and reading people to solve crimes. Great if you like noticing the small details everyone else misses.</p>
+        </article>
+      </div>
+
+      <p class="soon">More recommendations coming soon. Got one for me? <a href="./#contact">Send it my way →</a></p>
+    </div>
+  </main>
+  <footer class="footer"><div class="wrap">© Luvish Ramchandani · <a href="./">luvish6.github.io</a></div></footer>
+  <script>
+    // count page views on the live site only
+    if (!/^(localhost|127\.)/.test(location.hostname)) {
+      var s = document.createElement('script'); s.async = true; s.src = 'https://gc.zgo.at/count.js';
+      s.dataset.goatcounter = 'https://luvish.goatcounter.com/count'; document.head.appendChild(s);
+    }
+  </script>
+</body>
+</html>
