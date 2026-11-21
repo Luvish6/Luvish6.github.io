@@ -407,7 +407,7 @@ function setupJump() {
     ...sections.map(([id, label]) => ({ label, hint: "Section", go: go(id) })),
     ...PROJECTS.map(p => ({ label: p.title, hint: "Project", go: STORIES[p.title] ? () => document.querySelector(`[data-story="${CSS.escape(p.title)}"]`).click() : go("projects") })),
     { label: "Copy email address", hint: "Action", go: () => document.getElementById("copyEmail").click() },
-    { label: "Luvish recommends (shows)", hint: "Page", go: () => (location.href = "recommends.html") },
+    { label: "Luvish recommends (shows & movies)", hint: "Page", go: () => (location.href = "recommends.html") },
     { label: "Toggle light / dark mode", hint: "Action", go: () => document.getElementById("themeBtn").click() },
     { label: "Open GitHub", hint: "Link", go: () => open(LINKS.github, "_blank", "noopener") },
     { label: "Open LinkedIn", hint: "Link", go: () => open(LINKS.linkedin, "_blank", "noopener") },

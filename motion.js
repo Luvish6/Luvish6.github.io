@@ -28,7 +28,8 @@
     const target = document.getElementById(id);
     if (!target) return;
     const land = () => {
-      const y = id === "top" ? 0 : target.getBoundingClientRect().top + scrollY - 64;
+      const navH = document.querySelector(".nav").offsetHeight;
+      const y = id === "top" ? 0 : target.getBoundingClientRect().top + scrollY - navH - 8;
       root.style.scrollBehavior = "auto";
       scrollTo(0, y);
       root.style.scrollBehavior = "";
@@ -65,6 +66,8 @@
     ids.forEach(id => { const el = document.getElementById(id); if (el && el.getBoundingClientRect().top < innerHeight * .45) cur = id; });
     if (innerHeight + scrollY >= root.scrollHeight - 4) cur = "contact";
     navLinks.forEach(a => a.classList.toggle("active", a.getAttribute("href") === "#" + cur));
+    const act = navLinks.find(a => a.classList.contains("active"));
+    if (act && act !== markNav.last) { markNav.last = act; const bar = act.parentElement; bar.scrollTo({ left: act.offsetLeft - bar.clientWidth / 2 + act.offsetWidth / 2, behavior: "smooth" }); }
   }
   addEventListener("scroll", markNav, { passive: true });
   markNav();
