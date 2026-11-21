@@ -4,6 +4,7 @@
 const LINKS = {
   github: "https://github.com/Luvish6",
   leetcode: "https://leetcode.com/u/Luvish6/",
+  chess: "https://www.chess.com/member/Luvish69",
   linkedin: "https://www.linkedin.com/in/luvish-ramchandani-6312a2162",
   instagram: "https://www.instagram.com/luvish_ramchandani/",
   team: "https://www.instagram.com/team_adrenaline_f1inschools/",
@@ -171,7 +172,7 @@ const CERTS = [
 
 /* Visitor stats (GoatCounter, free & privacy-friendly).
    Sign up at goatcounter.com, pick a code (e.g. "luvish"), and put it here. */
-const ANALYTICS = { goatcounter: "" };
+const ANALYTICS = { goatcounter: "luvish" };
 
 /* Numbers strip. Update leetcode when your count grows. */
 const STATS = { gpa: "9.43", leetcode: "95", finals: "2×" };
