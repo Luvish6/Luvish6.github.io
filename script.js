@@ -151,8 +151,8 @@ const PROJECTS = [
     title: "A/B Testing Analysis Toolkit",
     category: "data", catLabel: "Data", status: "built",
     desc: "Toolkit for designing and analysing product experiments, from sample-size planning to the final readout.",
-    highlight: "Plan sample sizes and compare conversion rates with lift, confidence intervals, and a two-proportion z-test.",
-    tags: ["JavaScript", "Power analysis", "Hypothesis testing"],
+    highlight: "Analyze row-level CSVs with power and MDE curves, lift intervals, and sample ratio checks. Includes a reproducible public experiment case study.",
+    tags: ["JavaScript", "Experiment design", "Statistical inference"],
     repo: "https://github.com/Luvish6/Luvish6.github.io/tree/main/ab-testing", demo: "ab-testing/",
   },
 ];

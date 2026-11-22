@@ -20,3 +20,21 @@ output:empty { padding: 0; margin: 0; border: 0; }
 output.error { background: #fcefeb; border-color: #a42b1e; color: #85241a; }
 .method { color: #42554a; font-size: .9rem; max-width: 80ch; }
 @media (max-width: 760px) { .tools { grid-template-columns: 1fr; } main { margin-block: 1.5rem; } }
+.csv-panel { margin-bottom: 1rem; }
+.csv-panel input[type=file] { max-width: 36rem; }
+.mapping { margin-top: 1rem; }
+.check { display: flex; gap: .5rem; align-items: center; margin-top: 1rem; }
+.check input { width: auto; margin: 0; }
+.actions { display: flex; flex-wrap: wrap; gap: .5rem; }
+button:disabled { opacity: .55; cursor: wait; }
+.chart { margin-top: 1.5rem; }
+.chart h3 { margin: 0 0 .75rem; }
+.chart canvas { display: block; width: 100%; height: auto; margin-bottom: .7rem; }
+.chart input[type=range] { padding: 0; }
+.chart select { font: inherit; margin-left: .4rem; max-width: 100%; }
+.interval-row p { margin: .7rem 0 .25rem; font-size: .87rem; }
+.interval-track { position: relative; height: 1rem; background: #eef5ef; border-radius: .25rem; }
+.interval-track i { position: absolute; }
+.interval-track .zero { height: 100%; border-left: 1px dashed #586d61; }
+.interval-track .range { top: .43rem; height: .14rem; background: #38755a; }
+.interval-track .point { top: .25rem; width: .5rem; height: .5rem; background: #143729; border-radius: 50%; transform: translateX(-50%); }

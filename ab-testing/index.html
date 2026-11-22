@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Plan and analyze two-arm conversion experiments in your browser.">
   <title>A/B Testing Analysis Toolkit</title>
-  <link rel="stylesheet" href="style.css">
-  <script type="module" src="app.mjs?v=2"></script>
+  <link rel="stylesheet" href="style.css?v=3"></script>
+  <script type="module" src="app.mjs?v=3"></script>
 </head>
 <body>
   <main>
@@ -16,6 +16,27 @@
       <p>Plan your sample size and compare conversion rates. The forms start with example data. Calculations run locally in your browser.</p>
     </header>
     <noscript>Enable JavaScript to calculate results.</noscript>
+    <section class="csv-panel" aria-labelledby="csv-title">
+      <h2 id="csv-title">Analyze a CSV</h2>
+      <p>Upload a UTF-8 CSV with one row per assigned visitor and a binary outcome (0 or 1). Missing outcomes are excluded from conversion estimates and counted in the assignment check. Files stay in your browser.</p>
+      <form id="csv-form">
+        <label>CSV file<input type="file" name="file" accept=".csv,text/csv" required></label>
+        <div class="fields mapping">
+          <label>Group column<input name="group" value="group" required></label>
+          <label>Outcome column<input name="outcome" value="converted" required></label>
+          <label>Control label<input name="control" value="control" required></label>
+          <label>Treatment label<input name="treatment" value="treatment" required></label>
+        </div>
+        <label class="check"><input type="checkbox" name="excludeOthers"> Exclude other group labels</label>
+        <div class="actions">
+          <button>Analyze CSV</button>
+          <button type="button" id="synthetic">Try synthetic data</button>
+          <button type="button" id="hillstrom">Use Hillstrom mapping</button>
+        </div>
+        <output id="csv-status" aria-live="polite"></output>
+      </form>
+      <p class="method">For the real Hillstrom email experiment, download the CSV and choose the Hillstrom mapping before uploading. <a href="https://raw.githubusercontent.com/W-Tran/uplift-modelling/master/data/hillstrom/Kevin_Hillstrom_MineThatData_E-MailAnalytics_DataMiningChallenge_2008.03.20.csv">Download public dataset ↗</a> · <a href="RESULTS.md">Dataset and benchmark notes</a></p>
+    </section>
     <div class="tools">
       <section aria-labelledby="plan-title">
         <h2 id="plan-title">Sample-size planner</h2>
@@ -25,10 +46,17 @@
             <label>Minimum absolute lift (pp)<input name="lift" type="number" min="0" max="100" step="any" value="2" required></label>
             <label>Significance level (%)<input name="alpha" type="number" min="0.1" max="20" step="any" value="5" required></label>
             <label>Power (%)<input name="power" type="number" min="60" max="99" step="any" value="80" required></label>
+            <label>Available visitors per arm (optional)<input name="budget" type="number" min="1"></label>
           </div>
           <button>Calculate sample size</button>
           <output aria-live="polite"></output>
         </form>
+        <div id="power-chart" class="chart" hidden>
+          <h3>Power by sample size</h3>
+          <canvas width="480" height="210" role="img" aria-label="Estimated power rises with visitors per arm. Dashed line marks target power. Use the slider to read points."></canvas>
+          <label>Explore visitors per arm<input id="power-point" type="range" min="0" max="30" value="15"></label>
+          <output id="power-detail" for="power-point"></output>
+        </div>
       </section>
       <section aria-labelledby="readout-title">
         <h2 id="readout-title">Experiment readout</h2>
@@ -39,13 +67,20 @@
             <label>Variant visitors<input name="bv" type="number" min="1" value="4000" required></label>
             <label>Variant conversions<input name="bc" type="number" min="0" value="480" required></label>
             <label>Significance level (%)<input name="alpha" type="number" min="0.1" max="20" step="any" value="5" required></label>
+            <label>Planned control share (%)<input name="allocation" type="number" min="0.01" max="99.99" step="any" value="50" required></label>
+            <label>Smallest meaningful lift (pp)<input name="meaningful" type="number" min="0" max="100" step="any" value="0.5" required></label>
           </div>
           <button>Analyze experiment</button>
           <output aria-live="polite"></output>
         </form>
+        <div id="interval-chart" class="chart" hidden>
+          <h3>Rates and absolute lift</h3>
+          <label>Show<select id="interval-view"><option value="all">Rates and lift</option><option value="rates">Conversion rates</option><option value="lift">Absolute lift</option></select></label>
+          <div id="intervals"></div>
+        </div>
       </section>
     </div>
-    <p class="method">Use randomized, independent visitors and count each visitor once. The planner estimates sample size for equal allocation and a two-sided test. Analyze once at the planned endpoint. The pooled z-test uses the unrounded p-value for significance. The unpooled confidence interval can give a different answer about zero near the threshold. “pp” means percentage points.</p>
+    <p class="method">Use randomized, independent visitors and a fixed endpoint. The planner assumes equal allocation. The pooled z-test and Newcombe lift interval can disagree near the significance cutoff. Interpret results only after checking assignment and missingness. “pp” means percentage points.</p>
   </main>
 </body>
 </html>
