@@ -125,11 +125,11 @@ const PROJECTS = [
   },
   {
     title: "Real-time Collaborative Workspace",
-    category: "fullstack", catLabel: "Full stack", status: "progress",
-    desc: "A multiplayer kanban board and whiteboard where edits sync instantly between users, with conflict-free merging.",
-    highlight: "WebSockets + CRDTs (Yjs), Redis pub/sub for scaling across servers, deployed with a live demo.",
-    tags: ["Next.js", "TypeScript", "Node.js", "WebSockets", "Yjs", "PostgreSQL", "Redis"],
-    repo: "", demo: "",
+    category: "fullstack", catLabel: "Full stack", status: "built",
+    desc: "Side by Side is a collaborative document editor with invite links, live presence, and offline editing.",
+    highlight: "Yjs merges concurrent edits over WebSockets. PostgreSQL persists changes and IndexedDB keeps a local copy for reconnects.",
+    tags: ["Node.js", "WebSockets", "Yjs", "PostgreSQL", "IndexedDB"],
+    repo: "https://github.com/Luvish6/collaborative-workspace", demo: "https://side-by-side-workspace-4vgk.onrender.com",
   },
   {
     title: "Redis-compatible Key-Value Store",
