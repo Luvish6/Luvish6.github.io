@@ -1,8 +1,12 @@
-import { analyze, plan } from "./stats.mjs";
+import { analyze, plan } from "./stats.mjs?v=2";
 
 const number = new Intl.NumberFormat("en", { maximumFractionDigits: 3 });
-const pct = value => number.format(100 * value) + "%";
-const pp = value => number.format(100 * value) + " pp";
+function formatRate(value) {
+  const scaled = 100 * value;
+  return scaled !== 0 && Math.abs(scaled) < .001 ? scaled.toExponential(2) : number.format(scaled);
+}
+const pct = value => formatRate(value) + "%";
+const pp = value => formatRate(value) + " pp";
 
 function bind(id, calculate) {
   const form = document.getElementById(id);
@@ -28,10 +32,15 @@ function bind(id, calculate) {
 
 bind("planner", ({ baseline, lift, alpha, power }) => {
   const perArm = plan(baseline / 100, lift / 100, alpha / 100, power / 100);
-  return [
+  const target = (baseline + lift) / 100;
+  const lines = [
     number.format(perArm) + " visitors per arm",
-    number.format(2 * perArm) + " visitors total · " + pct((baseline + lift) / 100) + " target conversion"
+    number.format(2 * perArm) + " visitors total · " + pct(target) + " target conversion"
   ];
+  if (perArm * Math.min(baseline / 100, 1 - target) < 10) {
+    lines.push("At this sample size, at least one expected count is below 10. The normal approximation may be unreliable, and the readout may withhold inference.");
+  }
+  return lines;
 });
 
 bind("readout", ({ av, ac, bv, bc, alpha }) => {
@@ -45,7 +54,7 @@ bind("readout", ({ av, ac, bv, bc, alpha }) => {
   if (!estimate) return [...lines, "Inference requires at least 10 observed and expected conversions and non-conversions in each arm."];
   return [...lines,
     pct(1 - alpha / 100) + " confidence interval " + pp(estimate.lower) + " to " + pp(estimate.upper),
-    "Two-sided p-value " + (estimate.p < .0001 ? "< 0.0001" : estimate.p.toFixed(4)),
-    estimate.significant ? "Statistically significant at the selected threshold." : "Inconclusive at the selected threshold."
+    "Two-sided p-value " + (estimate.p < .0001 ? "< 0.0001" : estimate.p.toPrecision(5)),
+    estimate.significant ? "Statistically significant at the selected threshold." : "Did not reach statistical significance."
   ];
 });

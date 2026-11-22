@@ -46,13 +46,20 @@ export function analyze(control, variant, alpha) {
   const a = control.conversions / control.visitors;
   const b = variant.conversions / variant.visitors;
   const difference = b - a;
-  const pooled = (control.conversions + variant.conversions) / (control.visitors + variant.visitors);
+  const total = control.visitors + variant.visitors;
+  if (!Number.isSafeInteger(total)) throw new Error("The combined visitor count is too large.");
+  const successes = control.conversions + variant.conversions;
+  const failures = total - successes;
+  const pooled = successes / total;
   const result = { a, b, difference, relative: a === 0 ? null : difference / a, inference: null };
+  // Compare expected counts by cross multiplication to preserve the exact cutoff.
+  const minimum = 10n * BigInt(total);
   const sparse = [control, variant].some(({ visitors, conversions }) =>
-    Math.min(conversions, visitors - conversions, visitors * pooled, visitors * (1 - pooled)) < 10);
+    Math.min(conversions, visitors - conversions) < 10 ||
+    BigInt(visitors) * BigInt(Math.min(successes, failures)) < minimum);
   if (sparse) return result;
 
-  const error = Math.sqrt(variance(pooled) * (1 / control.visitors + 1 / variant.visitors));
+  const error = Math.sqrt(pooled * (failures / total) * (1 / control.visitors + 1 / variant.visitors));
   const p = difference === 0 ? 1 : 2 * tail(Math.abs(difference) / error);
   const margin = quantile(1 - alpha / 2) *
     Math.sqrt(variance(a) / control.visitors + variance(b) / variant.visitors);

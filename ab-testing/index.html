@@ -6,7 +6,7 @@
   <meta name="description" content="Plan and analyze two-arm conversion experiments in your browser.">
   <title>A/B Testing Analysis Toolkit</title>
   <link rel="stylesheet" href="style.css">
-  <script type="module" src="app.mjs"></script>
+  <script type="module" src="app.mjs?v=2"></script>
 </head>
 <body>
   <main>
@@ -45,7 +45,7 @@
         </form>
       </section>
     </div>
-    <p class="method">Use randomized, independent visitors and count each visitor once. The planner assumes equal allocation. Analyze once at the planned endpoint. The readout uses a pooled two-proportion z-test and an unpooled normal confidence interval. “pp” means percentage points.</p>
+    <p class="method">Use randomized, independent visitors and count each visitor once. The planner estimates sample size for equal allocation and a two-sided test. Analyze once at the planned endpoint. The pooled z-test uses the unrounded p-value for significance. The unpooled confidence interval can give a different answer about zero near the threshold. “pp” means percentage points.</p>
   </main>
 </body>
 </html>
