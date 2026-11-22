@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Plan and analyze two-arm conversion experiments in your browser.">
+  <title>A/B Testing Analysis Toolkit</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="app.mjs"></script>
+</head>
+<body>
+  <main>
+    <header>
+      <a href="../#projects">← Portfolio projects</a>
+      <h1>A/B Testing Analysis Toolkit</h1>
+      <p>Plan your sample size and compare conversion rates. The forms start with example data. Calculations run locally in your browser.</p>
+    </header>
+    <noscript>Enable JavaScript to calculate results.</noscript>
+    <div class="tools">
+      <section aria-labelledby="plan-title">
+        <h2 id="plan-title">Sample-size planner</h2>
+        <form id="planner">
+          <div class="fields">
+            <label>Baseline conversion (%)<input name="baseline" type="number" min="0" max="100" step="any" value="10" required></label>
+            <label>Minimum absolute lift (pp)<input name="lift" type="number" min="0" max="100" step="any" value="2" required></label>
+            <label>Significance level (%)<input name="alpha" type="number" min="0.1" max="20" step="any" value="5" required></label>
+            <label>Power (%)<input name="power" type="number" min="60" max="99" step="any" value="80" required></label>
+          </div>
+          <button>Calculate sample size</button>
+          <output aria-live="polite"></output>
+        </form>
+      </section>
+      <section aria-labelledby="readout-title">
+        <h2 id="readout-title">Experiment readout</h2>
+        <form id="readout">
+          <div class="fields">
+            <label>Control visitors<input name="av" type="number" min="1" value="4000" required></label>
+            <label>Control conversions<input name="ac" type="number" min="0" value="400" required></label>
+            <label>Variant visitors<input name="bv" type="number" min="1" value="4000" required></label>
+            <label>Variant conversions<input name="bc" type="number" min="0" value="480" required></label>
+            <label>Significance level (%)<input name="alpha" type="number" min="0.1" max="20" step="any" value="5" required></label>
+          </div>
+          <button>Analyze experiment</button>
+          <output aria-live="polite"></output>
+        </form>
+      </section>
+    </div>
+    <p class="method">Use randomized, independent visitors and count each visitor once. The planner assumes equal allocation. Analyze once at the planned endpoint. The readout uses a pooled two-proportion z-test and an unpooled normal confidence interval. “pp” means percentage points.</p>
+  </main>
+</body>
+</html>

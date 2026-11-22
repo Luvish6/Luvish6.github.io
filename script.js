@@ -149,11 +149,11 @@ const PROJECTS = [
   },
   {
     title: "A/B Testing Analysis Toolkit",
-    category: "data", catLabel: "Data", status: "progress",
+    category: "data", catLabel: "Data", status: "built",
     desc: "Toolkit for designing and analysing product experiments, from sample-size planning to the final readout.",
-    highlight: "Power analysis, CUPED variance reduction, and frequentist vs Bayesian comparisons.",
-    tags: ["Python", "Statistics", "SciPy", "Pandas"],
-    repo: "", demo: "",
+    highlight: "Plan sample sizes and compare conversion rates with lift, confidence intervals, and a two-proportion z-test.",
+    tags: ["JavaScript", "Power analysis", "Hypothesis testing"],
+    repo: "https://github.com/Luvish6/Luvish6.github.io/tree/main/ab-testing", demo: "ab-testing/",
   },
 ];
 

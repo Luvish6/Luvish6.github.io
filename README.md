@@ -10,6 +10,8 @@ Plain HTML, CSS and JavaScript (no build step), chess-themed:
 - Ctrl/⌘ + K quick jump, light/dark mode, and a few Easter eggs (try typing `e4`)
 
 ## Edit
+See the [A/B Testing Analysis Toolkit README](ab-testing/README.md) for setup, tests, and deployment.
+
 Most content lives in `script.js` (`LINKS`, `STATS`, `PROJECTS`, `STORIES`, `CERTS`).
 Shows and movies live in the `RECS` array in `recommends.html`.
 
